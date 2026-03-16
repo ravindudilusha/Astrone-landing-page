@@ -1,0 +1,3 @@
+export default {
+p262a3200: "M8 0H16V8H15V1.71094L0.726562 15.9766L0.0234375 15.2734L14.2891 1H8V0Z",
+} as Record<string, string>;

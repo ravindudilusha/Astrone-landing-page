@@ -1,0 +1,1 @@
+﻿src/imports/Vector.tsx(1,22): error TS2307: Cannot find module './svg-jfbzhrn0su' or its corresponding type declarations.
