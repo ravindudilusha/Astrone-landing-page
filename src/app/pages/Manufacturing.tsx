@@ -1,5 +1,6 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import svgPathsLeafDetailed from "../../imports/svg-mn0xv0vvcg";
 import imgMolecularBg from "../../assets/04c3df92e58c0466aa268a6d84de497845390713.png";
@@ -12,45 +13,47 @@ export default function Manufacturing() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with integrated navbar */}
-      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5">
-        <div className="relative h-[85vh] sm:h-[70vh] lg:h-[820px] min-h-[550px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
-          <ImageWithFallback
-            src={imgHero}
-            alt="Manufacturing"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/80 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 rounded-[20px] lg:rounded-[30px]" />
-          
-          {/* Navbar Overlay */}
-          <Navbar />
-          
-          {/* Hero Content */}
-          <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
-            <div className="max-w-3xl">
-              <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
-                Engineering Excellence<br />
-                <span className="text-white">Manufacturing Trust</span>
-              </h1>
-              <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-[620px] tracking-tight lg:tracking-[-0.36px]">
-                Welcome to Sri Lanka's premier, WHO-GMP certified pharmaceutical manufacturing facility. For 70 years, we have combined cutting-edge technology with uncompromising quality to deliver healthcare solutions to the world.
+      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <div className="relative h-[85vh] sm:h-[70vh] lg:h-[820px] min-h-[550px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
+            <ImageWithFallback
+              src={imgHero}
+              alt="Manufacturing"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/80 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 rounded-[20px] lg:rounded-[30px]" />
+            
+            {/* Navbar Overlay */}
+            <Navbar />
+            
+            {/* Hero Content */}
+            <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
+              <div className="max-w-3xl">
+                <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
+                  Engineering Excellence<br />
+                  <span className="text-white">Manufacturing Trust</span>
+                </h1>
+                <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-[620px] tracking-tight lg:tracking-[-0.36px]">
+                  Welcome to Sri Lanka's premier, WHO-GMP certified pharmaceutical manufacturing facility. For 70 years, we have combined cutting-edge technology with uncompromising quality to deliver healthcare solutions to the world.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Right Text */}
+            <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
+              <p className="text-white/90 text-sm sm:text-lg font-semibold tracking-tight">
+                | Manufacturing
               </p>
             </div>
           </div>
-
-          {/* Bottom Right Text */}
-          <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
-            <p className="text-white/90 text-sm sm:text-lg font-semibold tracking-tight">
-              | Manufacturing
-            </p>
-          </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Certified to Global Standards Section */}
-      <div className="relative bg-white py-12 lg:py-16 overflow-hidden mt-12 sm:mt-[75px] mb-12 sm:mb-[95px]">
+      <section className="relative bg-white py-12 lg:py-16 overflow-hidden mt-12 sm:mt-[75px] mb-12 sm:mb-[95px]">
         <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-20 px-6">
           {/* Left Side - Title with Background (col-6) */}
-          <div className="col-span-12 lg:col-span-6 relative -ml-6 pl-6 lg:pl-12">
+          <ScrollAnimation delay={0.1} direction="right" className="col-span-12 lg:col-span-6 relative -ml-6 pl-6 lg:pl-12">
             {/* Molecular Background Pattern - Black and White - Extends to Left Edge */}
             <div className="absolute -left-6 top-0 bottom-0 right-0 pointer-events-none">
               <img 
@@ -67,10 +70,10 @@ export default function Manufacturing() {
             <p className="relative z-10 font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[20px] leading-[37px] tracking-[-0.4px] text-[#505050] opacity-80 mt-6">
               Our facilities are built to world-class standards and regularly inspected by regulatory frameworks.
             </p>
-          </div>
+          </ScrollAnimation>
 
           {/* Right Side - Certifications Grid (2x2) (col-6) */}
-          <div className="col-span-12 lg:col-span-6 mt-6 lg:mt-0">
+          <ScrollAnimation delay={0.2} direction="left" className="col-span-12 lg:col-span-6 mt-6 lg:mt-0">
             <div className="grid grid-cols-2 gap-x-6 sm:gap-x-[60px] gap-y-10 sm:gap-y-[50px]">
               <div className="flex flex-col items-center">
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[32px] text-[#505050] tracking-[-0.64px] leading-[normal] text-center">
@@ -105,15 +108,15 @@ export default function Manufacturing() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
-      </div>
+      </section>
 
       {/* Manufacturing Content Sections */}
       <div className="mb-12 sm:mb-20">
         {/* Manufacturing Facility Section */}
-        <div className="mb-16 lg:mb-24 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-0">
-          <div className="col-span-12 lg:col-span-8 px-4 sm:px-6 lg:pl-5 lg:pr-6 flex items-center order-2 lg:order-1">
+        <section className="mb-16 lg:mb-24 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-0 overflow-hidden">
+          <ScrollAnimation delay={0.1} direction="right" className="col-span-12 lg:col-span-8 px-4 sm:px-6 lg:pl-5 lg:pr-6 flex items-center order-2 lg:order-1">
             <div className="max-w-[666px]">
               <p className="text-[#838383] font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[16px] sm:text-[20px] mb-2 sm:mb-3 tracking-tight sm:tracking-[-0.4px]">
                 Manufacturing Operation
@@ -133,26 +136,26 @@ export default function Manufacturing() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-span-12 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] lg:rounded-tl-[34px] lg:rounded-bl-[34px] lg:rounded-tr-none lg:rounded-br-none overflow-hidden order-1 lg:order-2">
+          </ScrollAnimation>
+          <ScrollAnimation delay={0.2} direction="left" className="col-span-12 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] lg:rounded-tl-[34px] lg:rounded-bl-[34px] lg:rounded-tr-none lg:rounded-br-none overflow-hidden order-1 lg:order-2">
             <ImageWithFallback
               src={imgManufacturingFacility}
               alt="Manufacturing Facility"
               className="w-full h-full object-cover"
             />
-          </div>
-        </div>
+          </ScrollAnimation>
+        </section>
 
         {/* Packing Division Section */}
-        <div className="mb-16 lg:mb-24 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-0">
-          <div className="col-span-12 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] lg:rounded-tr-[34px] lg:rounded-br-[34px] lg:rounded-tl-none lg:rounded-bl-none overflow-hidden order-1">
+        <section className="mb-16 lg:mb-24 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-0 overflow-hidden">
+          <ScrollAnimation delay={0.1} direction="right" className="col-span-12 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] lg:rounded-tr-[34px] lg:rounded-br-[34px] lg:rounded-tl-none lg:rounded-bl-none overflow-hidden order-1">
             <ImageWithFallback
               src={imgPackingDivision}
               alt="Packing Division"
               className="w-full h-full object-cover"
             />
-          </div>
-          <div className="col-span-12 lg:col-span-8 px-4 sm:px-6 lg:pl-20 lg:pr-5 flex items-center order-2">
+          </ScrollAnimation>
+          <ScrollAnimation delay={0.2} direction="left" className="col-span-12 lg:col-span-8 px-4 sm:px-6 lg:pl-20 lg:pr-5 flex items-center order-2">
             <div className="max-w-[666px] lg:ml-auto">
               <p className="text-[#838383] font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[16px] sm:text-[20px] mb-2 sm:mb-3 tracking-tight sm:tracking-[-0.4px]">
                 Manufacturing Operation
@@ -169,13 +172,13 @@ export default function Manufacturing() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+          </ScrollAnimation>
+        </section>
       </div>
 
       {/* Partner CTA Section */}
-      <section className="px-4 lg:px-6 pb-6 lg:pb-10">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="px-4 lg:px-6 pb-6 lg:pb-10 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto">
           <div className="bg-[#005400] rounded-[24px] lg:rounded-[30px] min-h-[200px] lg:h-[262px] relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-8 lg:py-0 gap-6 lg:gap-0">
             {/* Decorative Leaf Background */}
             <div className="hidden lg:block absolute inset-[0_2.94%_-33.59%_69.85%] pointer-events-none">
@@ -203,7 +206,7 @@ export default function Manufacturing() {
               </svg>
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

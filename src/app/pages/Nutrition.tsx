@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ProductViewModal } from "../components/ProductViewModal";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import { Link } from "react-router";
 import { ChevronDown, Search } from "lucide-react";
 import imgRectangle37 from "../../assets/47c1c6c5bb1001db4c2822fc9b9c489c28d487a5.png";
@@ -175,41 +176,43 @@ export default function Nutrition() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with integrated navbar */}
-      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5">
-        <div className="relative h-[65vh] sm:h-[70vh] lg:h-[820px] min-h-[480px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
-          <img
-            src={imgRectangle37}
-            alt="Astron Nutrition"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-          
-          {/* Navbar Overlay */}
-          <Navbar />
-          
-          {/* Hero Content */}
-          <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
-            <div className="max-w-2xl">
-              <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
-                Astron<br />
-                Nutrition
-              </h1>
-              <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-xl tracking-tight lg:tracking-[-0.36px]">
-                Trusted by generations of Sri Lankans for over 70 years. Delivering world-class Nutrition solutions.
+      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <div className="relative h-[65vh] sm:h-[70vh] lg:h-[820px] min-h-[480px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
+            <img
+              src={imgRectangle37}
+              alt="Astron Nutrition"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+            
+            {/* Navbar Overlay */}
+            <Navbar />
+            
+            {/* Hero Content */}
+            <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
+              <div className="max-w-2xl">
+                <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
+                  Astron<br />
+                  Nutrition
+                </h1>
+                <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-xl tracking-tight lg:tracking-[-0.36px]">
+                  Trusted by generations of Sri Lankans for over 70 years. Delivering world-class Nutrition solutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
+              <p className="text-white/90 text-sm sm:text-lg font-semibold tracking-tight">
+                | Our Brands
               </p>
             </div>
           </div>
-
-          <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
-            <p className="text-white/90 text-sm sm:text-lg font-semibold tracking-tight">
-              | Our Brands
-            </p>
-          </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Discover our Brands Section */}
-      <div className="text-center mt-12 sm:mt-[75px] mb-12 sm:mb-[95px] px-5 sm:px-6">
+      <ScrollAnimation delay={0.1} direction="up" className="text-center mt-12 sm:mt-[75px] mb-12 sm:mb-[95px] px-5 sm:px-6">
         <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] sm:text-[40px] lg:text-[48px] text-[#1a1a1a] mb-3 lg:mb-4 tracking-tight leading-tight">
           Discover our <span className="text-[#878787]">Brands</span>
         </h2>
@@ -219,12 +222,12 @@ export default function Nutrition() {
         <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[16px] lg:text-[20px] leading-relaxed lg:leading-[37px] tracking-tight lg:tracking-[-0.4px] text-[#505050] max-w-[980px] mx-auto">
           Astron was founded in 1956 and is Sri Lanka's largest private sector local manufacturer of high-quality branded pharmaceuticals, nutritional supplements and herbal products each Optipet herba plus product that we produce is scientifically formulated with care using only the finest standardized herbal extracts and pharmaceutical grade ingredients with USP and BP standards of the highest quality to ensure that your companion pet received the very best.
         </p>
-      </div>
+      </ScrollAnimation>
 
       {/* Products Section */}
-      <div className="px-4 sm:px-6 lg:px-8 xl:px-5 mb-20">
+      <div className="px-4 sm:px-6 lg:px-8 xl:px-5 mb-20 overflow-hidden">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-10 mb-10 lg:mb-[50px]">
+        <ScrollAnimation delay={0.2} direction="up" className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-10 mb-10 lg:mb-[50px]">
           <div className="flex flex-col gap-1">
             <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[28px] lg:text-[32px] tracking-tight text-[#444]">
               Nutrition
@@ -265,11 +268,11 @@ export default function Nutrition() {
               <p className="font-bold text-[13px] text-[#3b3b3b]">Filters</p>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-[50px]">
           {/* Sidebar Categories */}
-          <div className="w-full lg:w-[280px] lg:flex-shrink-0">
+          <ScrollAnimation delay={0.3} direction="right" className="w-full lg:w-[280px] lg:flex-shrink-0">
             <div className="flex flex-col gap-4 lg:gap-[26px]">
               {categories.map((category, index) => (
                 <div key={category.name} className="flex flex-col">
@@ -307,10 +310,10 @@ export default function Nutrition() {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Products Grid */}
-          <div className="flex-1">
+          <ScrollAnimation delay={0.4} direction="up" className="flex-1">
             {filteredProducts.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-center">
                 <p className="text-[#7d7d7d] text-lg font-['Plus_Jakarta_Sans',sans-serif]">
@@ -392,13 +395,13 @@ export default function Nutrition() {
                 ))}
               </div>
             )}
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
 
       {/* Partner CTA Section */}
-      <section className="px-4 lg:px-6 pb-6 lg:pb-10">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="px-4 lg:px-6 pb-6 lg:pb-10 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto">
           <div className="bg-[#005400] rounded-[24px] lg:rounded-[30px] min-h-[200px] lg:min-h-[262px] relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-8 lg:py-0 gap-6 lg:gap-0 text-center lg:text-left">
             {/* Decorative Leaf Background - Exact Figma positioning */}
             <div className="absolute inset-[0_2.94%_-33.59%_69.85%] pointer-events-none hidden lg:block">
@@ -423,7 +426,7 @@ export default function Nutrition() {
               </svg>
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

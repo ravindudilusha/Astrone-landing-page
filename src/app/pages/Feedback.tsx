@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPathsLeafDetailed from "../../imports/svg-mn0xv0vvcg";
 
 const productCategories = [
@@ -41,8 +42,8 @@ export default function Feedback() {
       </div>
 
       {/* Feedback Form Section */}
-      <section className="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[620px] mx-auto">
+      <section className="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[620px] mx-auto">
           <h1 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[28px] sm:text-[32px] lg:text-[48px] text-[#2e2e2e] text-center mb-3 tracking-tight leading-tight px-2">
             Your feedbacks are<br className="hidden sm:block" /><span className="sm:hidden"> </span>great value to us
           </h1>
@@ -171,7 +172,7 @@ export default function Feedback() {
               </button>
             </form>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Be a Part of Something Bigger */}
@@ -183,7 +184,7 @@ export default function Feedback() {
           </svg>
         </div>
 
-        <div className="max-w-[1400px] mx-auto relative z-10">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
               {/* Handshake Icon */}
@@ -211,7 +212,7 @@ export default function Feedback() {
               Contact Us
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <div className="-mt-[20px] sm:-mt-[25px] lg:-mt-[30px]">

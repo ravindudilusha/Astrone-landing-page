@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import imgNews1 from "../../assets/f293267b48e5d2b24e7403940d14de9886e4bcd0.png";
 import imgNews2 from "../../assets/04c3df92e58c0466aa268a6d84de497845390713.png";
 import imgNews3 from "../../assets/0590c8cc5057abdd91e8b062923551dc3dd88170.png";
@@ -122,9 +123,9 @@ export default function NewsEventPreview() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
+      <div className="max-w-[1200px] mx-auto px-8 py-16 overflow-hidden">
         {/* Title and Date */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
+        <ScrollAnimation delay={0.1} direction="up" className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
           <h1 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-4xl lg:text-5xl text-[#2e2e2e] tracking-[-1px] leading-tight max-w-3xl">
             {newsEvent.title}
           </h1>
@@ -134,19 +135,19 @@ export default function NewsEventPreview() {
               {newsEvent.date}
             </p>
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Event Image */}
-        <div className="mb-12 rounded-[30px] overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="mb-12 rounded-[30px] overflow-hidden">
           <ImageWithFallback
             src={newsEvent.image}
             alt={newsEvent.title}
             className="w-full h-[500px] object-cover"
           />
-        </div>
+        </ScrollAnimation>
 
         {/* Event Description */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <ScrollAnimation delay={0.3} direction="up" className="max-w-3xl mx-auto text-center mb-20">
           {newsEvent.description.map((paragraph, index) => (
             <p
               key={index}
@@ -155,10 +156,10 @@ export default function NewsEventPreview() {
               {paragraph}
             </p>
           ))}
-        </div>
+        </ScrollAnimation>
 
         {/* Popular Posts Section */}
-        <div className="mb-20">
+        <ScrollAnimation delay={0.4} direction="up" className="mb-20">
           <h2 className="font-['Plus_Jakarta_Sans',sans-serif] text-3xl font-bold text-[#2e2e2e] text-center mb-12 tracking-[-0.6px]">
             Popular Posts
           </h2>
@@ -212,10 +213,10 @@ export default function NewsEventPreview() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* CTA Section - Be a Part of something Bigger */}
-        <div className="bg-[#005400] rounded-[30px] px-16 py-20 relative overflow-hidden">
+        <ScrollAnimation delay={0.5} direction="up" className="bg-[#005400] rounded-[30px] px-16 py-20 relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute h-[194px] right-[100px] top-[51px] w-[178px] opacity-10">
             <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 178 194">
@@ -234,7 +235,7 @@ export default function NewsEventPreview() {
               Contact Us
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
 
       {/* Footer */}

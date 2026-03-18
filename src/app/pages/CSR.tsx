@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import imgHero from "../../assets/91146239001a34b4c3f2bf85a5219da24a67a479.png";
 import imgCsrVideo from "../../assets/e72c58633226c48f00b4911fc5d192265834ce53.png";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPaths from "../../imports/svg-a9g5l9pyvc";
 import svgPathsCTA from "../../imports/svg-jzjch5hoam";
 
@@ -68,48 +69,50 @@ export function CSR() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="pt-4 px-4 lg:px-5">
-        <section className="relative h-[500px] lg:h-[720px] overflow-hidden rounded-[20px] lg:rounded-[30px] mb-6 lg:mb-8">
-          <img
-            src={imgHero}
-            alt="Corporate Social Responsibility"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[20px] lg:rounded-[30px]" />
+      <div className="pt-4 px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <section className="relative h-[500px] lg:h-[720px] overflow-hidden rounded-[20px] lg:rounded-[30px] mb-6 lg:mb-8">
+            <img
+              src={imgHero}
+              alt="Corporate Social Responsibility"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[20px] lg:rounded-[30px]" />
 
-          {/* Navbar Overlay */}
-          <Navbar />
+            {/* Navbar Overlay */}
+            <Navbar />
 
-          <div className="absolute bottom-6 lg:bottom-8 right-6 lg:right-8">
-            <span className="text-white/70 text-xs lg:text-sm">| CSR</span>
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-end h-full px-6 lg:px-16 pb-16 lg:pb-32">
-            <div className="max-w-xl">
-              <h1 className="text-white text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight mb-4 lg:mb-6">
-                70 Years of Caring<br />for Sri Lanka
-              </h1>
-              <p className="text-white/80 text-xs lg:text-sm leading-relaxed max-w-md mb-6 lg:mb-8">
-                A legacy of healing, empowering, and sustaining our nation through seven decades of unwavering commitment.
-              </p>
-              <button className="border border-white/50 backdrop-blur-sm text-white px-5 lg:px-6 py-2.5 lg:py-3 rounded-full text-xs lg:text-sm font-semibold hover:bg-white/10 transition-colors">
-                Partner with us
-              </button>
+            <div className="absolute bottom-6 lg:bottom-8 right-6 lg:right-8">
+              <span className="text-white/70 text-xs lg:text-sm">| CSR</span>
             </div>
-          </div>
-        </section>
+
+            <div className="relative z-10 flex flex-col justify-end h-full px-6 lg:px-16 pb-16 lg:pb-32">
+              <div className="max-w-xl">
+                <h1 className="text-white text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight mb-4 lg:mb-6">
+                  70 Years of Caring<br />for Sri Lanka
+                </h1>
+                <p className="text-white/80 text-xs lg:text-sm leading-relaxed max-w-md mb-6 lg:mb-8">
+                  A legacy of healing, empowering, and sustaining our nation through seven decades of unwavering commitment.
+                </p>
+                <button className="border border-white/50 backdrop-blur-sm text-white px-5 lg:px-6 py-2.5 lg:py-3 rounded-full text-xs lg:text-sm font-semibold hover:bg-white/10 transition-colors">
+                  Partner with us
+                </button>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimation>
       </div>
 
       {/* Stats Section */}
-      <section className="py-12 lg:py-20 px-6 lg:px-8">
+      <section className="py-12 lg:py-20 px-6 lg:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-            <div className="lg:w-1/2">
+            <ScrollAnimation direction="right" delay={0.2} className="lg:w-1/2">
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#505050] leading-tight tracking-tight">
                 Empowering your<br />success with our<br />solutions
               </h2>
-            </div>
-            <div className="lg:w-1/2 grid grid-cols-2 gap-6 lg:gap-10 w-full">
+            </ScrollAnimation>
+            <ScrollAnimation direction="left" delay={0.3} className="lg:w-1/2 grid grid-cols-2 gap-6 lg:gap-10 w-full">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-start gap-4">
                   <div>
@@ -120,14 +123,14 @@ export function CSR() {
                   </div>
                 </div>
               ))}
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
 
       {/* CSR Video Section */}
-      <section className="py-8 lg:py-10 px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-8 lg:py-10 px-6 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="text-center mb-8 lg:mb-10">
             <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[#2e2e2e] tracking-tight">
               Corporate Social Responsibility<br />in few minutes
@@ -156,12 +159,12 @@ export function CSR() {
           <p className="text-center text-gray-500 text-xs lg:text-sm leading-relaxed max-w-3xl mx-auto mt-6 lg:mt-8 px-4">
             Astron's culture encourages diversity and innovation. It is a people-centric organization that strives for excellence by continuously improving the quality of its products/services while maintaining the work-life balance of its employees.
           </p>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Our Impact in Action */}
-      <section className="py-12 lg:py-20 px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-12 lg:py-20 px-6 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="mb-8 lg:mb-12">
             <p className="text-xs font-semibold text-[#005400] uppercase tracking-widest mb-3">CSR</p>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -241,11 +244,12 @@ export function CSR() {
               </button>
             </div>
           )}
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Be a Part of Something Bigger */}
       <section className="relative bg-[#005400] py-12 lg:py-20 px-4 lg:px-8 xl:px-16 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="w-full">
         {/* Decorative background elements */}
         <div className="hidden lg:block absolute h-[194px] right-[100px] top-[51px] w-[178px] opacity-10">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 178 194">
@@ -292,6 +296,7 @@ export function CSR() {
             </div>
           </div>
         </div>
+        </ScrollAnimation>
       </section>
 
       <div className="-mt-[30px]">

@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPathsVision from "../../imports/svg-5fek5rztib";
 import svgPathsTimeline from "../../imports/svg-9qbea9s8ru";
 import svgPathsLeaf from "../../imports/svg-f4451516p4";
@@ -97,14 +98,14 @@ export function AboutUs() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 lg:py-24 px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="py-12 lg:py-24 px-6 lg:px-8 max-w-[1400px] mx-auto overflow-hidden">
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-          <div className="w-full lg:w-1/2">
+          <ScrollAnimation direction="right" delay={0.2} className="w-full lg:w-1/2">
             <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-semibold text-[#505050] leading-tight tracking-tight font-['Plus_Jakarta_Sans']">
               Empowering your<br />success with our<br />solutions
             </h2>
-          </div>
-          <div className="w-full lg:w-1/2">
+          </ScrollAnimation>
+          <ScrollAnimation direction="left" delay={0.3} className="w-full lg:w-1/2">
             <div className="grid grid-cols-2 gap-x-6 lg:gap-x-12 gap-y-6 lg:gap-y-8">
               <div>
                 <p className="text-4xl lg:text-[52px] font-extrabold text-black tracking-tight font-['Plus_Jakarta_Sans']">70</p>
@@ -131,15 +132,15 @@ export function AboutUs() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="py-8 lg:py-16 px-4 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="py-8 lg:py-16 px-4 lg:px-8 max-w-[1400px] mx-auto overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Row 1: Vision Card (Left) + Building Image (Right) */}
-          <div className="relative bg-[#fff6e7] rounded-[24px] lg:rounded-[30px] p-8 lg:p-12 h-auto min-h-[300px] lg:h-[357px] flex flex-col justify-center overflow-hidden">
+          <ScrollAnimation direction="right" delay={0.1} className="relative bg-[#fff6e7] rounded-[24px] lg:rounded-[30px] p-8 lg:p-12 h-auto min-h-[300px] lg:h-[357px] flex flex-col justify-center overflow-hidden">
             {/* Decorative Eye Icon - top right */}
             <div className="absolute inset-[-7.56%_-10.79%_71.15%_72.58%] opacity-10">
               <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 231.159 130">
@@ -169,26 +170,26 @@ export function AboutUs() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
 
-          <div className="h-[250px] sm:h-[300px] lg:h-[357px] rounded-[24px] lg:rounded-[30px] overflow-hidden">
+          <ScrollAnimation direction="left" delay={0.2} className="h-[250px] sm:h-[300px] lg:h-[357px] rounded-[24px] lg:rounded-[30px] overflow-hidden">
             <img
               src={imgRectangle3851}
               alt="Astron building"
               className="w-full h-full object-cover"
             />
-          </div>
+          </ScrollAnimation>
 
           {/* Row 2: Team Photo (Left) + Mission Card (Right) */}
-          <div className="h-[250px] sm:h-[300px] lg:h-[357px] rounded-[24px] lg:rounded-[30px] overflow-hidden hidden lg:block">
+          <ScrollAnimation direction="right" delay={0.3} className="h-[250px] sm:h-[300px] lg:h-[357px] rounded-[24px] lg:rounded-[30px] overflow-hidden hidden lg:block">
             <img
               src={imgRectangle3852}
               alt="Astron team"
               className="w-full h-full object-cover"
             />
-          </div>
+          </ScrollAnimation>
 
-          <div className="relative bg-[#e7f3ff] rounded-[24px] lg:rounded-[30px] p-8 lg:p-12 h-auto min-h-[300px] lg:h-[357px] flex flex-col justify-center overflow-hidden">
+          <ScrollAnimation direction="left" delay={0.4} className="relative bg-[#e7f3ff] rounded-[24px] lg:rounded-[30px] p-8 lg:p-12 h-auto min-h-[300px] lg:h-[357px] flex flex-col justify-center overflow-hidden">
             {/* Decorative Medical/Lightbulb Icon - top right */}
             <div className="absolute inset-[-8.12%_-6.45%_63.87%_80.33%] opacity-30">
               <div className="absolute inset-[18.01%_16.67%]">
@@ -247,7 +248,7 @@ export function AboutUs() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
           
           {/* Mobile only Team Photo (moved to bottom) */}
           <div className="h-[250px] sm:h-[300px] rounded-[24px] overflow-hidden lg:hidden">
@@ -261,8 +262,8 @@ export function AboutUs() {
       </section>
 
       {/* Discover Our Astron */}
-      <section className="py-12 lg:py-24 px-4 lg:px-8 text-center">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-12 lg:py-24 px-4 lg:px-8 text-center overflow-hidden">
+        <ScrollAnimation delay={0.1} className="max-w-[1400px] mx-auto">
           <h2 className="text-3xl lg:text-[42px] font-bold text-[#323232] tracking-tight mb-4 lg:mb-6 font-['Plus_Jakarta_Sans']">
             Discover our <span className="text-[#87B54C]">Astron</span>
           </h2>
@@ -276,13 +277,13 @@ export function AboutUs() {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Timeline / Process Section */}
-      <section className="py-12 lg:py-24 px-4 lg:px-8 text-center bg-white relative">
+      <section className="py-12 lg:py-24 px-4 lg:px-8 text-center bg-white relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto flex flex-col items-center">
-          <div className="flex flex-col items-center lg:items-end w-full lg:w-3/4 max-w-4xl lg:self-end text-center lg:text-right mb-8 lg:mb-16 px-4">
+          <ScrollAnimation delay={0.1} direction="down" className="flex flex-col items-center lg:items-end w-full lg:w-3/4 max-w-4xl lg:self-end text-center lg:text-right mb-8 lg:mb-16 px-4">
             <p className="text-[#87B54C] font-semibold text-xs lg:text-sm tracking-wider uppercase mb-2 lg:mb-3 font-['Plus_Jakarta_Sans']">
               OUR HISTORY
             </p>
@@ -292,11 +293,11 @@ export function AboutUs() {
             <p className="text-[#6b7280] text-sm lg:text-[16px] leading-relaxed lg:leading-[26px] max-w-[580px] font-['Plus_Jakarta_Sans']">
               Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy.
             </p>
-          </div>
+          </ScrollAnimation>
         </div>
         
         {/* Timeline image container */}
-        <div className="w-full mt-6 sm:mt-8 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="w-full mt-6 sm:mt-8 overflow-hidden">
           <div className="w-full overflow-x-auto pb-6 scrollbar-hide">
             <div className="min-w-[800px] lg:min-w-full lg:px-0">
               <img 
@@ -306,27 +307,27 @@ export function AboutUs() {
               />
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Leaderboard Message Section */}
-      <section className="overflow-visible relative pt-20 lg:pt-0">
+      <section className="relative pt-20 lg:pt-0">
         <div className="bg-[#ecffec] h-auto lg:h-[350px]">
           <div className="max-w-[1400px] mx-auto h-full">
             <div className="flex flex-col lg:flex-row gap-0 items-end h-full">
               {/* Leader Image - Left Side - extends above the section */}
-              <div className="w-full lg:w-[30%] flex items-end justify-center lg:justify-start -mt-20 lg:-mt-0">
-                <div className="w-[80%] max-w-[300px] lg:w-full lg:max-w-none" style={{ height: 'auto', minHeight: '300px', lg: {height: '400px'} } as any}>
+              <ScrollAnimation direction="up" delay={0.2} className="w-full lg:w-[30%] flex items-end justify-center lg:justify-start -mt-20 lg:-mt-0">
+                <div className="w-[80%] max-w-[300px] lg:w-full lg:max-w-none h-[400px] lg:h-[480px]">
                   <img 
                     src={imgLeader} 
                     alt="Mr. John Doe - CEO of Astron"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-              </div>
+              </ScrollAnimation>
 
               {/* Leader Message - Right Side */}
-              <div className="w-full lg:w-[70%] flex flex-col justify-center px-6 sm:px-8 lg:px-16 py-8 lg:py-12 relative text-center lg:text-left">
+              <ScrollAnimation direction="left" delay={0.3} className="w-full lg:w-[70%] flex flex-col justify-center px-6 sm:px-8 lg:px-16 py-8 lg:py-12 relative text-center lg:text-left">
                 <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-[#323232] tracking-tight mb-4 leading-tight font-['Plus_Jakarta_Sans']">
                   Our Leaderboard Message<br className="hidden sm:block" /> for you
                 </h2>
@@ -349,17 +350,17 @@ export function AboutUs() {
                     CEO of Astron
                   </p>
                 </div>
-              </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>
       </section>
 
       {/* Associations Section */}
-      <section className="py-12 lg:py-20 px-4 lg:px-8 bg-white">
+      <section className="py-12 lg:py-20 px-4 lg:px-8 bg-white overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-start">
-            <div className="w-full lg:w-1/2">
+            <ScrollAnimation direction="right" delay={0.2} className="w-full lg:w-1/2">
               <h2 className="text-3xl lg:text-[42px] font-semibold text-[#323232] tracking-tight mb-6 lg:mb-8 font-['Plus_Jakarta_Sans']">
                 Astron is a member of the following associations
               </h2>
@@ -374,8 +375,8 @@ export function AboutUs() {
                 <li>Sri Lanka Maldives Bilateral Business Council</li>
                 <li>Sri Lanka China Business Council</li>
               </ul>
-            </div>
-            <div className="w-full lg:w-1/2">
+            </ScrollAnimation>
+            <ScrollAnimation direction="left" delay={0.3} className="w-full lg:w-1/2">
               <div className="rounded-[24px] lg:rounded-[30px] overflow-hidden">
                 <img
                   src={imgImage95}
@@ -383,14 +384,14 @@ export function AboutUs() {
                   className="w-full h-[250px] sm:h-[300px] lg:h-[434px] object-cover"
                 />
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
 
       {/* CTA - Let's divine into our Brands */}
-      <section className="px-4 lg:px-6 pb-6 lg:pb-10">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="px-4 lg:px-6 pb-6 lg:pb-10 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto">
           <div className="relative bg-[#005400] rounded-[24px] lg:rounded-[30px] py-12 lg:py-20 px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 overflow-hidden text-center lg:text-left">
             {/* Decorative Leaf Background - Hidden on mobile for cleaner look */}
             <div className="hidden lg:block absolute inset-[0_2.94%_-33.59%_69.85%] pointer-events-none">
@@ -411,7 +412,7 @@ export function AboutUs() {
               </svg>
             </button>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

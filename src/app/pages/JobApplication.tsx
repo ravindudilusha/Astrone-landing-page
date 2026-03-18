@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router";
 import { X, ArrowLeft } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import imgJobPoster from "../../assets/e9e5c2a7f59f1b33615cb6df4d51025de4b190b0.png";
 
 export function JobApplication() {
@@ -54,13 +55,13 @@ export function JobApplication() {
       </div>
 
       {/* Application Form Section */}
-      <section className="py-12 px-4 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-12 px-4 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="bg-white rounded-[30px] overflow-hidden">
             <div className="p-8 lg:p-12">
               <div className="flex flex-col lg:flex-row gap-12">
                 {/* Left side - Job Details */}
-                <div className="lg:w-[45%]">
+                <ScrollAnimation delay={0.2} direction="right" className="lg:w-[45%]">
                   <p className="text-sm font-semibold text-[#2e2e2e] mb-2">Open Vacant</p>
                   <h2 className="text-4xl lg:text-5xl font-bold text-[#2e2e2e] tracking-tight leading-tight mb-8">
                     {job.title}
@@ -93,10 +94,10 @@ export function JobApplication() {
                       className="w-full h-auto"
                     />
                   </div>
-                </div>
+                </ScrollAnimation>
 
                 {/* Right side - Application Form */}
-                <div className="lg:w-[55%]">
+                <ScrollAnimation delay={0.3} direction="left" className="lg:w-[55%]">
                   <div className="bg-white border-2 border-[#d3d3d3] rounded-[30px] p-8">
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="text-2xl font-bold text-[#2e2e2e]">Job Application Form</h3>
@@ -270,11 +271,11 @@ export function JobApplication() {
                       </button>
                     </form>
                   </div>
-                </div>
+                </ScrollAnimation>
               </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Phone, Mail, MapPin, Plus, Minus } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import imgHero from "../../assets/783583fd09243beb47ee28621f31fd285662b9d2.png";
 import imgAstronLogo1 from "../../assets/89c7fd421088a06c87c99545596a5c79e1d21610.png";
 import imgImage149 from "../../assets/1a58bdec794f674d0628e6585c84186dd1d8dc7b.png";
@@ -72,41 +73,43 @@ export function ContactUs() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5">
-        <section className="relative h-[65vh] sm:h-[70vh] lg:h-[720px] min-h-[450px] overflow-hidden rounded-[20px] lg:rounded-[30px] mb-8">
-          <img
-            src={imgHero}
-            alt="Contact Astron"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <section className="relative h-[65vh] sm:h-[70vh] lg:h-[720px] min-h-[450px] overflow-hidden rounded-[20px] lg:rounded-[30px] mb-8">
+            <img
+              src={imgHero}
+              alt="Contact Astron"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-          {/* Navbar Overlay */}
-          <Navbar />
+            {/* Navbar Overlay */}
+            <Navbar />
 
-          <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-8">
-            <span className="text-white/70 text-sm">| Contact Us</span>
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-end h-full px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
-            <div className="max-w-2xl">
-              <h1 className="text-white text-[32px] sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] mb-4 lg:mb-6">
-                We're Here<br />to Listen and Help
-              </h1>
-              <p className="text-white/80 text-[14px] leading-relaxed max-w-md mb-6 lg:mb-8 tracking-tight">
-                Connecting you with the right solutions. Our dedicated team promises a 24–48 hour response time for all your enquiries.
-              </p>
-              <button className="border border-white/40 backdrop-blur-md text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all active:scale-95">
-                View FAQs
-              </button>
+            <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-8">
+              <span className="text-white/70 text-sm">| Contact Us</span>
             </div>
-          </div>
-        </section>
+
+            <div className="relative z-10 flex flex-col justify-end h-full px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
+              <div className="max-w-2xl">
+                <h1 className="text-white text-[32px] sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] mb-4 lg:mb-6">
+                  We're Here<br />to Listen and Help
+                </h1>
+                <p className="text-white/80 text-[14px] leading-relaxed max-w-md mb-6 lg:mb-8 tracking-tight">
+                  Connecting you with the right solutions. Our dedicated team promises a 24–48 hour response time for all your enquiries.
+                </p>
+                <button className="border border-white/40 backdrop-blur-md text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all active:scale-95">
+                  View FAQs
+                </button>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimation>
       </div>
 
       {/* Contact Info Cards */}
-      <section className="py-8 lg:py-12 px-4 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-8 lg:py-12 px-4 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="border border-gray-300 rounded-2xl p-6 lg:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {contactCards.map((card) => (
               <div key={card.title} className="flex items-center gap-5">
@@ -121,15 +124,15 @@ export function ContactUs() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-10 lg:py-20 px-4 lg:px-8">
+      <section className="py-10 lg:py-20 px-4 lg:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             {/* Left side */}
-            <div className="lg:w-5/12">
+            <ScrollAnimation direction="right" delay={0.2} className="lg:w-5/12">
               <h2 className="text-3xl lg:text-5xl font-bold text-[#2e2e2e] tracking-tight leading-tight mb-4 lg:mb-6">
                 Let's get in touch<br />with Us
               </h2>
@@ -168,10 +171,10 @@ export function ContactUs() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
 
             {/* Right side: Form */}
-            <div className="lg:w-7/12">
+            <ScrollAnimation direction="left" delay={0.3} className="lg:w-7/12">
               <div className="bg-white border border-gray-200 rounded-3xl p-6 lg:p-10 shadow-sm">
                 <h3 className="text-xl font-bold text-[#2e2e2e] mb-2">Contact Us</h3>
                 <p className="text-sm text-gray-400 mb-6 lg:mb-8">The friendly team would love to hear from you.</p>
@@ -246,14 +249,14 @@ export function ContactUs() {
                   </button>
                 </form>
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="py-12 lg:py-20 px-4 lg:px-8 bg-gray-50/50">
-        <div className="max-w-[900px] mx-auto">
+      <section className="py-12 lg:py-20 px-4 lg:px-8 bg-gray-50/50 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[900px] mx-auto">
           <h2 className="text-3xl lg:text-5xl font-bold text-[#2e2e2e] tracking-tight text-center mb-8 lg:mb-12">
             Frequently Asked<br />Questions
           </h2>
@@ -290,12 +293,12 @@ export function ContactUs() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Map */}
-      <section className="px-4 lg:px-5 pb-4">
-        <div className="h-[300px] lg:h-[500px] overflow-hidden relative rounded-[20px] lg:rounded-[30px]">
+      <section className="px-4 lg:px-5 pb-4 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="h-[300px] lg:h-[500px] overflow-hidden relative rounded-[20px] lg:rounded-[30px]">
           {/* Google Maps Embed - Astron Limited, Colombo */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798654857448!2d79.85844931477473!3d6.914681995007345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259692f7598b9%3A0x9b8c0a0c0a0c0a0c!2sAstron%20Limited!5e0!3m2!1sen!2slk!4v1234567890123!5m2!1sen!2slk"
@@ -308,7 +311,7 @@ export function ContactUs() {
             title="Astron Limited Location"
             className="w-full h-full rounded-[20px] lg:rounded-[30px]"
           />
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

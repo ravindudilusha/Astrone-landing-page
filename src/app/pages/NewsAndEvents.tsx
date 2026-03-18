@@ -11,6 +11,7 @@ import imgNews3 from "../../assets/0fce5dc8e698df0884a400b492bbf0111db67d65.png"
 import imgNews4 from "../../assets/151f6b006bd4329d608c1ac6f06a7d69a29688e8.png";
 import imgNews5 from "../../assets/165bfb26e59a80ed1bba14a44074fd119d6e5572.png";
 import imgNews6 from "../../assets/e9e5c2a7f59f1b33615cb6df4d51025de4b190b0.png";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPaths from "../../imports/svg-a9g5l9pyvc";
 import svgPathsCTA from "../../imports/svg-jzjch5hoam";
 
@@ -72,39 +73,41 @@ export default function NewsAndEvents() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="pt-4 px-4 lg:px-5">
-        <section className="relative h-[720px] overflow-hidden rounded-[30px] mb-8">
-          <ImageWithFallback
-            src={imgHero}
-            alt="News and Events"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[30px]" />
+      <div className="pt-4 px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <section className="relative h-[720px] overflow-hidden rounded-[30px] mb-8">
+            <ImageWithFallback
+              src={imgHero}
+              alt="News and Events"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[30px]" />
 
-          {/* Navbar Overlay */}
-          <Navbar />
+            {/* Navbar Overlay */}
+            <Navbar />
 
-          <div className="absolute bottom-8 right-8">
-            <span className="text-white/70 text-sm">| News and Events</span>
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-end h-full px-16 pb-32">
-            <div className="max-w-xl">
-              <h1 className="text-white text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
-                Driven by Science<br />
-                Defined by Innovation
-              </h1>
-              <p className="text-white/80 text-sm leading-relaxed max-w-md">
-                Discover the latest breakthroughs, achievements and milestones as we continue to shape the future of pharmaceutical excellence in Sri Lanka.
-              </p>
+            <div className="absolute bottom-8 right-8">
+              <span className="text-white/70 text-sm">| News and Events</span>
             </div>
-          </div>
-        </section>
+
+            <div className="relative z-10 flex flex-col justify-end h-full px-16 pb-32">
+              <div className="max-w-xl">
+                <h1 className="text-white text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                  Driven by Science<br />
+                  Defined by Innovation
+                </h1>
+                <p className="text-white/80 text-sm leading-relaxed max-w-md">
+                  Discover the latest breakthroughs, achievements and milestones as we continue to shape the future of pharmaceutical excellence in Sri Lanka.
+                </p>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimation>
       </div>
 
       {/* Featured Event Section */}
-      <section className="py-12 px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-12 px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="mb-8">
             <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[14px] text-[#838383] tracking-[-0.28px] mb-2">
               Featured
@@ -134,12 +137,12 @@ export default function NewsAndEvents() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Recent Posts Section */}
-      <section className="py-20 px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-20 px-8 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto">
           <div className="text-center mb-8">
             <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[48px] text-[#2e2e2e] tracking-[-0.96px] mb-4">
               Recent <span className="text-[#b3b3b3]">Posts</span>
@@ -237,11 +240,12 @@ export default function NewsAndEvents() {
               </button>
             </div>
           )}
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Be a Part of Something Bigger */}
       <section className="relative py-16 px-8 lg:px-16 bg-[#005400] overflow-hidden">
+        <ScrollAnimation delay={0.3} direction="up" className="w-full">
         {/* Decorative background elements */}
         <div className="absolute h-[194px] right-[100px] top-[51px] w-[178px] opacity-10">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 178 194">
@@ -288,6 +292,7 @@ export default function NewsAndEvents() {
             </div>
           </div>
         </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

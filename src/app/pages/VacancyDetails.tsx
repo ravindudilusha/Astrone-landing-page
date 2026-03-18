@@ -4,6 +4,7 @@ import { ChevronDown, Calendar } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import imgJobPoster from "../../assets/e9e5c2a7f59f1b33615cb6df4d51025de4b190b0.png";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPathsCTA from "../../imports/svg-jzjch5hoam";
 
 // Handshake icon component
@@ -69,40 +70,42 @@ export function VacancyDetails() {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
-      <div className="py-8 px-4 lg:px-8">
-        <div className="mb-8">
-          {/* Navbar Overlay */}
-          <Navbar variant="standard" />
-        </div>
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-start justify-between gap-6 px-4 lg:px-0">
-          <div>
-            <p className="font-medium text-[#1a1a1a] mb-2 tracking-wide font-['Plus_Jakarta_Sans',sans-serif] text-base">Open Vacant</p>
-            <h1 className="text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#505050] tracking-[-1px] leading-tight">
-              {job.title}
-            </h1>
+      <div className="py-8 px-4 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <div className="mb-8">
+            {/* Navbar Overlay */}
+            <Navbar variant="standard" />
           </div>
-          <div className="md:w-[45%] md:text-right pt-1 text-[#7c7c7c]">
-            <p className="font-medium text-base lg:text-[18px] lg:leading-[28px] mt-2 md:mt-0 font-['Plus_Jakarta_Sans',sans-serif] md:ml-auto max-w-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
+          <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-start justify-between gap-6 px-4 lg:px-0">
+            <div>
+              <p className="font-medium text-[#1a1a1a] mb-2 tracking-wide font-['Plus_Jakarta_Sans',sans-serif] text-base">Open Vacant</p>
+              <h1 className="text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#505050] tracking-[-1px] leading-tight">
+                {job.title}
+              </h1>
+            </div>
+            <div className="md:w-[45%] md:text-right pt-1 text-[#7c7c7c]">
+              <p className="font-medium text-base lg:text-[18px] lg:leading-[28px] mt-2 md:mt-0 font-['Plus_Jakarta_Sans',sans-serif] md:ml-auto max-w-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
 
       {/* Main Content - Two Column Layout */}
-      <div className="px-4 lg:px-8 py-8 lg:py-12">
-        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-14">
+      <div className="px-4 lg:px-8 py-8 lg:py-12 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-14">
           {/* Left Column - Job Poster */}
-          <div className="w-full lg:w-[45%] flex justify-center lg:justify-start">
+          <ScrollAnimation delay={0.2} direction="right" className="w-full lg:w-[45%] flex justify-center lg:justify-start">
             <img
               src={imgJobPoster}
               alt="Job Poster"
               className="w-full max-w-[500px] h-auto object-contain"
             />
-          </div>
+          </ScrollAnimation>
 
           {/* Right Column - Application Form */}
-          <div className="w-full lg:w-[55%] flex justify-center lg:justify-end">
+          <ScrollAnimation delay={0.3} direction="left" className="w-full lg:w-[55%] flex justify-center lg:justify-end">
             <div className="w-full max-w-[700px] bg-white border border-[#e5e5e5] rounded-[24px] lg:rounded-[30px] p-6 sm:p-8 lg:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
               <h2 className="text-[28px] lg:text-[32px] font-bold text-[#181818] font-['Plus_Jakarta_Sans',sans-serif] text-center mb-1">
                 Job Application Form
@@ -343,13 +346,13 @@ export function VacancyDetails() {
                 </div>
               </form>
             </div>
-          </div>
-        </div>
+          </ScrollAnimation>
+        </ScrollAnimation>
       </div>
 
       {/* Be a Part of Something Bigger */}
       <section className="relative py-16 px-8 lg:px-16 bg-[#005400] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto relative">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             {/* Handshake Icon */}
             <div className="flex-shrink-0">
@@ -368,7 +371,7 @@ export function VacancyDetails() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

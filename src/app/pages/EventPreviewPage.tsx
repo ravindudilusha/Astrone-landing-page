@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import svgPaths from "../../imports/svg-cakmh93gbg";
 
 // Sample event data - in a real app, this would come from a database or API
@@ -115,9 +116,9 @@ export default function EventPreviewPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
+      <div className="max-w-[1200px] mx-auto px-8 py-16 overflow-hidden">
         {/* Title and Date */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
+        <ScrollAnimation delay={0.1} direction="up" className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-[#2e2e2e] tracking-tight leading-tight max-w-3xl">
             {event.title}
           </h1>
@@ -125,28 +126,28 @@ export default function EventPreviewPage() {
             <p className="text-sm text-gray-500 mb-1">Date:</p>
             <p className="text-base font-semibold text-[#2e2e2e]">{event.date}</p>
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Event Image */}
-        <div className="mb-12 rounded-[30px] overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="mb-12 rounded-[30px] overflow-hidden">
           <ImageWithFallback
             src={event.image}
             alt={event.title}
             className="w-full h-[500px] object-cover"
           />
-        </div>
+        </ScrollAnimation>
 
         {/* Event Description */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <ScrollAnimation delay={0.3} direction="up" className="max-w-3xl mx-auto text-center mb-20">
           {event.description.map((paragraph, index) => (
             <p key={index} className="text-gray-600 text-base leading-relaxed mb-4">
               {paragraph}
             </p>
           ))}
-        </div>
+        </ScrollAnimation>
 
         {/* Popular Posts Section */}
-        <div className="mb-20">
+        <ScrollAnimation delay={0.4} direction="up" className="mb-20">
           <h2 className="text-3xl font-bold text-[#2e2e2e] text-center mb-12">
             Popular Posts
           </h2>
@@ -200,10 +201,10 @@ export default function EventPreviewPage() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* CTA Section - Be a Part of something Bigger */}
-        <div className="bg-[#005400] rounded-[30px] px-16 py-20 relative overflow-hidden">
+        <ScrollAnimation delay={0.5} direction="up" className="bg-[#005400] rounded-[30px] px-16 py-20 relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-8 right-8 w-32 h-32 opacity-10">
             <svg viewBox="0 0 100 100" className="w-full h-full text-[#87B54C]">
@@ -222,7 +223,7 @@ export default function EventPreviewPage() {
               Contact Us
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
 
       {/* Footer */}

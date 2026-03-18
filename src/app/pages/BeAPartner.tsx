@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle, Award, Globe, ShieldCheck, Package } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import imgHero from "../../assets/360a6faae5aca84c3b9cfd1b8a19247cb7085ebf.png";
 import imgWorkspace from "../../assets/0fce5dc8e698df0884a400b492bbf0111db67d65.png";
 
@@ -55,44 +56,46 @@ export function BeAPartner() {
   return (
     <div className="min-h-screen bg-white">
       {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5">
-        <div className="relative h-[65vh] sm:h-[70vh] lg:h-[820px] min-h-[480px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
-          <img
-            src={imgHero}
-            alt="Partner with us"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <section className="relative pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up">
+          <div className="relative h-[65vh] sm:h-[70vh] lg:h-[820px] min-h-[480px] rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
+            <img
+              src={imgHero}
+              alt="Partner with us"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-          {/* Navbar Overlay */}
-          <Navbar />
+            {/* Navbar Overlay */}
+            <Navbar />
 
-          {/* Hero Content */}
-          <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
-            <div className="max-w-2xl">
-              <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
-                Partner with Sri Lanka's<br />
-                <span className="text-[#39cb74]">Healthcare Pioneer</span>
-              </h1>
-              <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-xl tracking-tight lg:tracking-[-0.36px] mb-8">
-                Join our 70-year legacy of excellence. We are looking for distributors and suppliers committed to delivering world-class healthcare solutions.
-              </p>
-              <button className="border border-white/50 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-all active:scale-95 w-fit">
-                Partner with us
-              </button>
+            {/* Hero Content */}
+            <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
+              <div className="max-w-2xl">
+                <h1 className="text-white text-[32px] sm:text-5xl lg:text-7xl font-semibold tracking-[-1px] lg:tracking-[-1.5px] leading-[1.15] lg:leading-tight mb-4 lg:mb-6">
+                  Partner with Sri Lanka's<br />
+                  <span className="text-[#39cb74]">Healthcare Pioneer</span>
+                </h1>
+                <p className="text-white/80 text-[14px] lg:text-lg leading-relaxed max-w-xl tracking-tight lg:tracking-[-0.36px] mb-8">
+                  Join our 70-year legacy of excellence. We are looking for distributors and suppliers committed to delivering world-class healthcare solutions.
+                </p>
+                <button className="border border-white/50 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-all active:scale-95 w-fit">
+                  Partner with us
+                </button>
+              </div>
+            </div>
+
+            {/* Breadcrumb tag */}
+            <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
+              <span className="text-white/70 text-sm sm:text-lg font-semibold tracking-tight">| BA Partner</span>
             </div>
           </div>
-
-          {/* Breadcrumb tag */}
-          <div className="absolute right-6 sm:right-14 bottom-6 sm:bottom-16 hidden sm:block">
-            <span className="text-white/70 text-sm sm:text-lg font-semibold tracking-tight">| BA Partner</span>
-          </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Why Partner with Astron */}
-      <section className="py-24 px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-24 px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} direction="up" className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Benefit cards – left column */}
             <div className="lg:w-1/3 space-y-6">
@@ -140,14 +143,14 @@ export function BeAPartner() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* Become a Distributor or Supplier */}
-      <section className="py-20 px-8 bg-gray-50/50">
+      <section className="py-20 px-8 bg-gray-50/50 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2">
+            <ScrollAnimation delay={0.2} direction="right" className="lg:w-1/2">
               <p className="text-xs font-semibold text-[#005400] uppercase tracking-widest mb-3">Our History</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#2e2e2e] tracking-tight mb-6">
                 Become a Distributor<br />or a Supplier
@@ -166,8 +169,8 @@ export function BeAPartner() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="lg:w-1/2">
+            </ScrollAnimation>
+            <ScrollAnimation delay={0.3} direction="left" className="lg:w-1/2">
               <div className="rounded-3xl overflow-hidden h-96">
                 <img
                   src={imgWorkspace}
@@ -175,14 +178,14 @@ export function BeAPartner() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
 
       {/* Application Form */}
-      <section className="py-24 px-8">
-        <div className="max-w-[900px] mx-auto">
+      <section className="py-24 px-8 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[900px] mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#2e2e2e] tracking-tight mb-3">
               Start the Conversation
@@ -327,7 +330,7 @@ export function BeAPartner() {
               </button>
             </div>
           </form>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />

@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 
 import imgHero from "../../assets/790c8d1c422c77d0ad2b32dcc8da991a2f89ead2.png";
 import imgBusiness from "../../assets/2a5ccce750257a6cd412066b1650430e77866330.png";
@@ -149,8 +150,8 @@ export function Home() {
       </section>
 
       {/* ─── ABOUT US STATEMENT ─── */}
-      <section className="py-10 sm:py-12 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto text-center">
+      <section className="py-10 sm:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.2} className="max-w-[1400px] mx-auto text-center">
           <p className="text-[#2e2e2e] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3 sm:mb-4 lg:mb-6">About Us</p>
           <h2 className="text-[#505050] text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-0.5px] sm:tracking-[-1.04px] leading-tight mb-4 sm:mb-6 lg:mb-8 max-w-5xl mx-auto px-2">
             Committed to the development of the local health care manufacturing industry in Sri Lanka.
@@ -169,12 +170,12 @@ export function Home() {
               <ArrowRight size={16} />
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* ─── STATS BAR ─── */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-10 sm:pb-12 lg:pb-20">
-        <div className="max-w-[1180px] mx-auto">
+      <section className="px-4 sm:px-6 lg:px-8 pb-10 sm:pb-12 lg:pb-20 overflow-hidden">
+        <ScrollAnimation delay={0.1} className="max-w-[1180px] mx-auto">
           <div className="border-2 border-[#2f872d] rounded-[20px] lg:rounded-[30px] px-4 sm:px-6 lg:px-10 py-6 lg:py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             {stats.map((stat, i) => (
               <div key={stat.value} className="flex items-center gap-4">
@@ -188,131 +189,132 @@ export function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* ─── OUR BUSINESS ─── */}
-      <section className="py-10 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center">
-            {/* Left image */}
-            <div className="w-full lg:w-[42%]">
-              <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[34px] overflow-hidden h-[350px] sm:h-[400px] lg:h-[580px]">
-                <img
-                  src={imgBusiness}
-                  alt="Our Business"
-                  className="w-full h-full object-cover"
+      <section className="py-10 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center">
+          {/* Left image */}
+          <ScrollAnimation direction="right" delay={0.2} className="w-full lg:w-[42%]">
+            <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[34px] overflow-hidden h-[350px] sm:h-[400px] lg:h-[580px]">
+              <img
+                src={imgBusiness}
+                alt="Our Business"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Pagination dots */}
+            <div className="flex gap-2 sm:gap-3 mt-3 sm:mt-4 justify-center">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <button
+                  key={i}
+                  className={`rounded-full transition-all ${i === 0 ? "w-7 sm:w-8 h-2.5 sm:h-3 bg-[#2f872d]" : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[#2f872d]/23"}`}
                 />
-              </div>
-              {/* Pagination dots */}
-              <div className="flex gap-2 sm:gap-3 mt-3 sm:mt-4 justify-center">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <button
-                    key={i}
-                    className={`rounded-full transition-all ${i === 0 ? "w-7 sm:w-8 h-2.5 sm:h-3 bg-[#2f872d]" : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[#2f872d]/23"}`}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
+          </ScrollAnimation>
 
-            {/* Right list */}
-            <div className="w-full lg:w-[58%]">
-              <p className="text-[#2e2e2e] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-widest mb-4 sm:mb-6 lg:mb-8">Our Business</p>
-              <div className="space-y-0">
-                {businessLines.map((line, i) => (
-                  <Link
-                    key={line.num}
-                    to={line.path}
-                    onMouseEnter={() => setActiveBusinessLine(i)}
-                    className={`w-full flex items-center justify-between py-3 sm:py-4 lg:py-5 border-b transition-colors text-left group ${
-                      activeBusinessLine === i
-                        ? "border-[#2f872d]"
-                        : "border-gray-200 hover:border-[#2f872d]/30"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
-                      <span className={`text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-[-0.8px] transition-colors ${
-                        activeBusinessLine === i ? "text-[#2f872d]" : "text-[#424242]"
-                      }`}>
-                        {line.num}
-                      </span>
-                      <span className={`text-base sm:text-xl lg:text-2xl xl:text-4xl font-semibold tracking-[0.4px] transition-colors ${
-                        activeBusinessLine === i ? "text-[#2f872d]" : "text-[#424242]"
-                      }`}>
-                        {line.label}
-                      </span>
-                    </div>
-                    <div className="w-[48px] h-[36px] sm:w-[56px] sm:h-[40px] lg:w-[76px] lg:h-[52px] bg-[#f9f9f9] rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg width="20" height="16" viewBox="0 0 34 26" fill="none" className="sm:w-[24px] sm:h-[18px] lg:w-[34px] lg:h-[26px]">
-                        <path d={`M1 13H33M21 1L33 13L21 25`} stroke={activeBusinessLine === i ? "#2f872d" : "#424242"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-6 sm:mt-8">
-                <Link to="/brands/pharmaceuticals" className="inline-flex items-center gap-2 text-[#3b3b3b] text-sm sm:text-base font-semibold underline underline-offset-4 hover:text-[#2f872d] transition-colors">
-                  See more our Business
-                  <ArrowRight size={16} />
+          {/* Right list */}
+          <ScrollAnimation direction="left" delay={0.3} className="w-full lg:w-[58%]">
+            <p className="text-[#2e2e2e] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-widest mb-4 sm:mb-6 lg:mb-8">Our Business</p>
+            <div className="space-y-0">
+              {businessLines.map((line, i) => (
+                <Link
+                  key={line.num}
+                  to={line.path}
+                  onMouseEnter={() => setActiveBusinessLine(i)}
+                  className={`w-full flex items-center justify-between py-3 sm:py-4 lg:py-5 border-b transition-colors text-left group ${
+                    activeBusinessLine === i
+                      ? "border-[#2f872d]"
+                      : "border-gray-200 hover:border-[#2f872d]/30"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
+                    <span className={`text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-[-0.8px] transition-colors ${
+                      activeBusinessLine === i ? "text-[#2f872d]" : "text-[#424242]"
+                    }`}>
+                      {line.num}
+                    </span>
+                    <span className={`text-base sm:text-xl lg:text-2xl xl:text-4xl font-semibold tracking-[0.4px] transition-colors ${
+                      activeBusinessLine === i ? "text-[#2f872d]" : "text-[#424242]"
+                    }`}>
+                      {line.label}
+                    </span>
+                  </div>
+                  <div className="w-[48px] h-[36px] sm:w-[56px] sm:h-[40px] lg:w-[76px] lg:h-[52px] bg-[#f9f9f9] rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg width="20" height="16" viewBox="0 0 34 26" fill="none" className="sm:w-[24px] sm:h-[18px] lg:w-[34px] lg:h-[26px]">
+                      <path d={`M1 13H33M21 1L33 13L21 25`} stroke={activeBusinessLine === i ? "#2f872d" : "#424242"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </Link>
-              </div>
+              ))}
             </div>
-          </div>
+            <div className="mt-6 sm:mt-8">
+              <Link to="/brands/pharmaceuticals" className="inline-flex items-center gap-2 text-[#3b3b3b] text-sm sm:text-base font-semibold underline underline-offset-4 hover:text-[#2f872d] transition-colors">
+                See more our Business
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* ─── OPERATIONS / SERVICES ─── */}
-      <section className="py-12 lg:py-24 px-6 lg:px-8 bg-[#ecffec] border-y border-[#d3d3d3]">
+      <section className="py-12 lg:py-24 px-6 lg:px-8 bg-[#ecffec] border-y border-[#d3d3d3] overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[#2e2e2e] text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3 lg:mb-4">Operations</p>
-          <h2 className="text-[#505050] text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-1.04px] leading-tight mb-10 lg:mb-16 max-w-2xl">
-            Committed to the development of the local health care
-          </h2>
+          <ScrollAnimation delay={0.1}>
+            <p className="text-[#2e2e2e] text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3 lg:mb-4">Operations</p>
+            <h2 className="text-[#505050] text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-1.04px] leading-tight mb-10 lg:mb-16 max-w-2xl">
+              Committed to the development of the local health care
+            </h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {operationsCards.map((card) => (
-              <div
-                key={card.title}
-                className={`rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 h-[280px] lg:h-[329px] flex flex-col justify-between relative overflow-hidden ${
-                  card.dark ? "bg-[#2f872d]" : "bg-white border border-[#d3d3d3]"
-                }`}
-              >
-                {/* Icon top-right */}
-                <div className="flex justify-between items-start">
-                  <p className={`text-xs lg:text-sm font-semibold opacity-70 ${card.dark ? "text-white" : "text-black"}`}>
-                    {card.subtitle}
-                  </p>
-                  <div className={`w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center ${card.dark ? "bg-white" : "bg-white border border-gray-200"}`}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2f872d" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="lg:w-5 lg:h-5">
-                      <circle cx="12" cy="12" r="3" />
-                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
-                    </svg>
+            {operationsCards.map((card, i) => (
+              <ScrollAnimation key={card.title} delay={0.2 + (i * 0.1)}>
+                <div
+                  className={`rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 h-[280px] lg:h-[329px] flex flex-col justify-between relative overflow-hidden ${
+                    card.dark ? "bg-[#2f872d]" : "bg-white border border-[#d3d3d3]"
+                  }`}
+                >
+                  {/* Icon top-right */}
+                  <div className="flex justify-between items-start">
+                    <p className={`text-xs lg:text-sm font-semibold opacity-70 ${card.dark ? "text-white" : "text-black"}`}>
+                      {card.subtitle}
+                    </p>
+                    <div className={`w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center ${card.dark ? "bg-white" : "bg-white border border-gray-200"}`}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2f872d" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="lg:w-5 lg:h-5">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <p className={`text-base lg:text-xl font-semibold leading-[1.2] mb-2 lg:mb-3 tracking-[-0.45px] ${card.dark ? "text-white" : "text-black opacity-60"}`}>
-                    {card.description}
+                  <div>
+                    <p className={`text-base lg:text-xl font-semibold leading-[1.2] mb-2 lg:mb-3 tracking-[-0.45px] ${card.dark ? "text-white" : "text-black opacity-60"}`}>
+                      {card.description}
+                    </p>
+                  </div>
+                  <p className={`text-xl lg:text-2xl font-semibold tracking-[-0.45px] ${card.dark ? "text-white" : "text-black"}`}>
+                    {card.title}
                   </p>
                 </div>
-                <p className={`text-xl lg:text-2xl font-semibold tracking-[-0.45px] ${card.dark ? "text-white" : "text-black"}`}>
-                  {card.title}
-                </p>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── LATEST / NEWS SECTION ─── */}
-      <section className="py-12 lg:py-24 px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-12 lg:py-24 px-6 lg:px-8 overflow-hidden">
+        <ScrollAnimation delay={0.1} className="max-w-[1400px] mx-auto">
           <h2 className="text-[#505050] text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-1.04px] leading-tight mb-10 lg:mb-16 text-center max-w-4xl mx-auto">
             Committed to the development of the local health care manufacturing industry in Sri Lanka.
           </h2>
 
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
             {/* Left large block */}
-            <div className="w-full lg:w-[38%] relative">
+            <ScrollAnimation direction="right" delay={0.2} className="w-full lg:w-[38%] relative">
               <div className="rounded-[24px] lg:rounded-[34px] overflow-hidden h-[500px] lg:h-full lg:min-h-[700px]">
                 <img
                   src={imgNewsMain}
@@ -332,40 +334,44 @@ export function Home() {
                   Learn more <ArrowRight size={16} />
                 </button>
               </div>
-            </div>
+            </ScrollAnimation>
 
             {/* Right two stacked images */}
             <div className="w-full lg:w-[62%] flex flex-col gap-5 lg:gap-6">
-              <div className="relative rounded-[24px] lg:rounded-[34px] overflow-hidden h-[240px] lg:h-[290px] group">
-                <img
-                  src={imgNewsRight1}
-                  alt="Medical Equipment Show"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-black/40 rounded-[24px] lg:rounded-[34px]" />
-                <p className="absolute bottom-4 lg:bottom-6 left-4 lg:left-8 text-white text-lg lg:text-2xl font-semibold tracking-[-0.56px] leading-7 lg:leading-9 max-w-[250px]">
-                  Medical Equipment show
-                </p>
-              </div>
-              <div className="relative rounded-[24px] lg:rounded-[34px] overflow-hidden h-[240px] lg:h-[290px] group">
-                <img
-                  src={imgNewsRight2}
-                  alt="Medical Equipment Show"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-black/40 rounded-[24px] lg:rounded-[34px]" />
-                <p className="absolute bottom-4 lg:bottom-6 left-4 lg:left-8 text-white text-lg lg:text-2xl font-semibold tracking-[-0.56px] leading-7 lg:leading-9 max-w-[250px]">
-                  Medical Equipment show
-                </p>
-              </div>
+              <ScrollAnimation direction="left" delay={0.3}>
+                <div className="relative rounded-[24px] lg:rounded-[34px] overflow-hidden h-[240px] lg:h-[290px] group">
+                  <img
+                    src={imgNewsRight1}
+                    alt="Medical Equipment Show"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-black/40 rounded-[24px] lg:rounded-[34px]" />
+                  <p className="absolute bottom-4 lg:bottom-6 left-4 lg:left-8 text-white text-lg lg:text-2xl font-semibold tracking-[-0.56px] leading-7 lg:leading-9 max-w-[250px]">
+                    Medical Equipment show
+                  </p>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="left" delay={0.4}>
+                <div className="relative rounded-[24px] lg:rounded-[34px] overflow-hidden h-[240px] lg:h-[290px] group">
+                  <img
+                    src={imgNewsRight2}
+                    alt="Medical Equipment Show"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-black/40 rounded-[24px] lg:rounded-[34px]" />
+                  <p className="absolute bottom-4 lg:bottom-6 left-4 lg:left-8 text-white text-lg lg:text-2xl font-semibold tracking-[-0.56px] leading-7 lg:leading-9 max-w-[250px]">
+                    Medical Equipment show
+                  </p>
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* ─── CERTIFICATED BY ─── */}
-      <section className="py-10 lg:py-16 px-6 lg:px-8 border-t border-gray-100">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-10 lg:py-16 px-6 lg:px-8 border-t border-gray-100 overflow-hidden">
+        <ScrollAnimation delay={0.2} className="max-w-[1400px] mx-auto">
           <p className="text-[#2e2e2e] text-xs lg:text-sm font-semibold uppercase tracking-widest text-center mb-8 lg:mb-12">Certificated By</p>
           <div className="flex items-center justify-center gap-8 lg:gap-12 xl:gap-20 flex-wrap">
             {certLogos.map((logo, i) => (
@@ -374,65 +380,68 @@ export function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       {/* ─── OPERATIONS / BPM CARDS ─── */}
-      <section className="py-12 lg:py-24 px-6 lg:px-8">
+      <section className="py-12 lg:py-24 px-6 lg:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[#2e2e2e] text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3 lg:mb-4">Operations</p>
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start mb-10 lg:mb-16">
-            <h2 className="text-[#505050] text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-1.04px] leading-tight w-full lg:w-1/2">
-              Committed to the development of the local health care
-            </h2>
-            <p className="text-[#a7a7a7] text-base lg:text-lg leading-relaxed w-full lg:w-1/2 lg:text-right tracking-[-0.36px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-          </div>
+          <ScrollAnimation delay={0.1}>
+            <p className="text-[#2e2e2e] text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3 lg:mb-4">Operations</p>
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start mb-10 lg:mb-16">
+              <h2 className="text-[#505050] text-2xl lg:text-4xl xl:text-5xl font-semibold tracking-[-1.04px] leading-tight w-full lg:w-1/2">
+                Committed to the development of the local health care
+              </h2>
+              <p className="text-[#a7a7a7] text-base lg:text-lg leading-relaxed w-full lg:w-1/2 lg:text-right tracking-[-0.36px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
             {bpmCards.map((card, i) => (
-              <div
-                key={i}
-                className="bg-white relative rounded-[30px] lg:rounded-[37.67px] w-full cursor-pointer group hover:shadow-xl transition-all duration-300 border-[#ddd] border-[1px] md:border-[2.5px] lg:border-[2.883px]"
-              >
-                <div className="p-4 lg:p-[17px]">
-                  {/* Image Area */}
-                  <div className="relative aspect-[16/9] lg:h-[176px] overflow-hidden rounded-[24px] lg:rounded-[30px] mb-4 lg:mb-6">
-                    <img 
-                      alt={card.title} 
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                      src={card.image} 
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                  </div>
-                  
-                  {/* Content Area */}
-                  <div className="px-1 pb-2 flex items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg lg:text-[20px] text-black mb-1">
-                        {card.title}
-                      </p>
-                      <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[11px] lg:text-[13px] text-[#858585] line-clamp-2 leading-relaxed">
-                        {card.desc}
-                      </p>
+              <ScrollAnimation key={i} delay={0.2 + (i * 0.1)}>
+                <div
+                  className="bg-white relative rounded-[30px] lg:rounded-[37.67px] w-full cursor-pointer group hover:shadow-xl transition-all duration-300 border-[#ddd] border-[1px] md:border-[2.5px] lg:border-[2.883px]"
+                >
+                  <div className="p-4 lg:p-[17px]">
+                    {/* Image Area */}
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] lg:rounded-[30px] mb-4 lg:mb-6">
+                      <img 
+                        alt={card.title} 
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        src={card.image} 
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
                     </div>
                     
-                    {/* Arrow button */}
-                    <div className="shrink-0 w-12 h-12 lg:w-14 lg:h-14 bg-[#2f872d15] rounded-full flex items-center justify-center group-hover:bg-[#2f872d25] transition-colors">
-                      <ArrowRight size={20} className="text-[#005400]" />
+                    {/* Content Area */}
+                    <div className="px-1 pb-2 flex items-center justify-between gap-4">
+                      <div className="flex-1">
+                        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg lg:text-[20px] text-black mb-1">
+                          {card.title}
+                        </p>
+                        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[11px] lg:text-[13px] text-[#858585] line-clamp-2 leading-relaxed">
+                          {card.desc}
+                        </p>
+                      </div>
+                      
+                      {/* Arrow button */}
+                      <div className="shrink-0 w-12 h-12 lg:w-14 lg:h-14 bg-[#2f872d15] rounded-full flex items-center justify-center group-hover:bg-[#2f872d25] transition-colors">
+                        <ArrowRight size={20} className="text-[#005400]" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="px-4 lg:px-6 pb-6 lg:pb-10">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="px-4 lg:px-6 pb-6 lg:pb-10 overflow-hidden">
+        <ScrollAnimation delay={0.2} direction="up" className="max-w-[1400px] mx-auto">
           <div className="bg-[#005400] rounded-[24px] lg:rounded-[30px] min-h-[200px] lg:h-[262px] relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-8 lg:py-0 gap-6 lg:gap-0">
             {/* Decorative Leaf Background - Hidden on mobile for cleaner look */}
             <div className="hidden lg:block absolute inset-[0_2.94%_-33.59%_69.85%] pointer-events-none">
@@ -457,7 +466,7 @@ export function Home() {
               </svg>
             </Link>
           </div>
-        </div>
+        </ScrollAnimation>
       </section>
 
       <Footer />
