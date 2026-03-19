@@ -21,6 +21,7 @@ import Manufacturing from "./pages/Manufacturing";
 import Quality from "./pages/Quality";
 import ResearchAndDevelopment from "./pages/ResearchAndDevelopment";
 import Feedback from "./pages/Feedback";
+import ProductEnquiryPage from "./pages/ProductEnquiryPage";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,7 @@ export const router = createBrowserRouter([
       { path: "operations/manufacturing", Component: Manufacturing },
       { path: "operations/quality-assurance", Component: Quality },
       { path: "operations/rnd", Component: ResearchAndDevelopment },
+      { path: "enquire", Component: ProductEnquiryPage },
     ],
   },
 ]);

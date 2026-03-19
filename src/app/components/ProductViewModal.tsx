@@ -1,7 +1,6 @@
 import { X, Maximize2 } from "lucide-react";
 import svgPaths360 from "../../imports/svg-4j646ktm2r";
-import { useState } from "react";
-import { EnquireModal } from "./EnquireModal";
+import { useNavigate } from "react-router";
 
 interface ProductViewModalProps {
   isOpen: boolean;
@@ -10,16 +9,18 @@ interface ProductViewModalProps {
     name: string;
     description: string;
     image: string;
+    category?: string;
   };
 }
 
 export function ProductViewModal({ isOpen, onClose, product }: ProductViewModalProps) {
-  const [isEnquireOpen, setIsEnquireOpen] = useState(false);
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
   const handleEnquireClick = () => {
-    setIsEnquireOpen(true);
+    navigate("/enquire", { state: { product } });
+    onClose();
   };
 
   return (
@@ -139,13 +140,6 @@ export function ProductViewModal({ isOpen, onClose, product }: ProductViewModalP
         </div>
       </div>
     </div>
-    
-    {/* Enquire Modal */}
-    <EnquireModal 
-      isOpen={isEnquireOpen}
-      onClose={() => setIsEnquireOpen(false)}
-      product={product}
-    />
     </>
   );
 }
