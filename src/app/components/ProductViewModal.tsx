@@ -10,6 +10,7 @@ interface ProductViewModalProps {
     description: string;
     image: string;
     category?: string;
+    video?: string;
   };
 }
 
@@ -55,27 +56,37 @@ export function ProductViewModal({ isOpen, onClose, product }: ProductViewModalP
           </div>
 
           {/* 3D Viewer Area */}
-          <div className="bg-[#f5f5f5] rounded-[22px] h-[250px] sm:h-[352px] flex items-center justify-center relative mb-[24px] sm:mb-[32px]">
-            {/* Product Image */}
-            <div className="relative z-10">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="max-w-[280px] max-h-[280px] object-contain"
+          <div className="bg-[#f5f5f5] rounded-[22px] h-[250px] sm:h-[352px] flex items-center justify-center relative mb-[24px] sm:mb-[32px] overflow-hidden">
+            {product.video ? (
+              <video
+                src={product.video}
+                autoPlay
+                controls
+                loop
+                className="w-full h-full object-contain relative z-10"
               />
-              {/* Shadow under product */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-                <svg width="117" height="23" viewBox="0 0 117 23" fill="none">
-                  <ellipse cx="58.5" cy="11.5" rx="58.5" ry="11.5" fill="url(#shadow_gradient_modal)" />
-                  <defs>
-                    <radialGradient id="shadow_gradient_modal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58.5 11.5) scale(58.5 11.5)">
-                      <stop stopOpacity="0.2" />
-                      <stop offset="1" stopColor="#3F3F3F" stopOpacity="0" />
-                    </radialGradient>
-                  </defs>
-                </svg>
+            ) : (
+              /* Product Image */
+              <div className="relative z-10">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="max-w-[280px] max-h-[280px] object-contain"
+                />
+                {/* Shadow under product */}
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
+                  <svg width="117" height="23" viewBox="0 0 117 23" fill="none">
+                    <ellipse cx="58.5" cy="11.5" rx="58.5" ry="11.5" fill="url(#shadow_gradient_modal)" />
+                    <defs>
+                      <radialGradient id="shadow_gradient_modal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58.5 11.5) scale(58.5 11.5)">
+                        <stop stopOpacity="0.2" />
+                        <stop offset="1" stopColor="#3F3F3F" stopOpacity="0" />
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* 360 Rotation Icon */}
             <div className="absolute bottom-[20px] left-[20px]">

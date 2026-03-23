@@ -16,6 +16,8 @@ import imgImage142 from "../../assets/3e60dd4361b76e2c565543b76d28c442723017f7.p
 import imgImage137 from "../../assets/8b312d74f1d7013b00cb2fd701dcb101c335c297.png";
 import imgImage141 from "../../assets/96a308e1f661fc1f1fa812ac08fbf2b110ae6126.png";
 import imgImage136 from "../../assets/45a87694f45a68252941fa8be19536df934563cf.png";
+import imgAllermine from "../../assets/Allermine.png";
+import videoAllermine from "../../assets/videos/Allermine 100ml.mp4";
 import svgPathsLeafDetailed from "../../imports/svg-mn0xv0vvcg";
 
 // Product categories with counts and subcategories
@@ -24,8 +26,8 @@ const categories = [
   { name: "Pain Management", count: 5 },
   { name: "Vitamins & Minerals", count: 3 },
   { name: "Worm Eradication", count: 6 },
-  { 
-    name: "Skin Care", 
+  {
+    name: "Skin Care",
     count: 24,
     subcategories: [
       { name: "Therapeutic Creams and Ointments", count: 6 },
@@ -34,8 +36,8 @@ const categories = [
       { name: "Nappy Rash", count: 6 },
     ]
   },
-  { 
-    name: "Respiratory", 
+  {
+    name: "Respiratory",
     count: 5,
     subcategories: []
   },
@@ -46,125 +48,126 @@ const categories = [
 
 // Sample products using the imported images with proper categories
 const allProducts = [
-  { 
-    id: 1, 
-    name: "Paracetamol", 
-    image: imgImage133, 
+  {
+    id: 1,
+    name: "Paracetamol",
+    image: imgImage133,
     category: "Pain Management",
     categoryColor: "#002e54",
     description: "Fast-acting pain relief tablets"
   },
-  { 
-    id: 2, 
-    name: "Multi-Vita Syrup", 
-    image: imgImage131, 
+  {
+    id: 2,
+    name: "Multi-Vita Syrup",
+    image: imgImage131,
     category: "Vitamins & Minerals",
     categoryColor: "#aa5b00",
     description: "Children's Multivitamin Syrup"
   },
-  { 
-    id: 3, 
-    name: "Ibuprofen", 
-    image: imgImage132, 
+  {
+    id: 3,
+    name: "Ibuprofen",
+    image: imgImage132,
     category: "Pain Management",
     categoryColor: "#002e54",
     description: "Anti-inflammatory tablets"
   },
-  { 
-    id: 4, 
-    name: "Vitamin C", 
-    image: imgImage143, 
+  {
+    id: 4,
+    name: "Vitamin C",
+    image: imgImage143,
     category: "Vitamins & Minerals",
     categoryColor: "#aa5b00",
     description: "Immune support supplement"
   },
-  { 
-    id: 5, 
-    name: "Calcium Plus", 
-    image: imgImage146, 
+  {
+    id: 5,
+    name: "Calcium Plus",
+    image: imgImage146,
     category: "Vitamins & Minerals",
     categoryColor: "#aa5b00",
     description: "Bone health supplement"
   },
-  { 
-    id: 6, 
-    name: "Aspirin", 
-    image: imgImage142, 
+  {
+    id: 6,
+    name: "Aspirin",
+    image: imgImage142,
     category: "Pain Management",
     categoryColor: "#002e54",
     description: "Pain relief and fever reducer"
   },
-  { 
-    id: 7, 
-    name: "Skin Cream", 
-    image: imgImage137, 
+  {
+    id: 7,
+    name: "Skin Cream",
+    image: imgImage137,
     category: "Moisturizing Cream",
     categoryColor: "#aa5b00",
     description: "Moisturizing skin cream"
   },
-  { 
-    id: 8, 
-    name: "Tooth Paste", 
-    image: imgImage141, 
+  {
+    id: 8,
+    name: "Tooth Paste",
+    image: imgImage141,
     category: "Oral Care",
     categoryColor: "#002e54",
     description: "Complete oral care solution"
   },
-  { 
-    id: 9, 
-    name: "Cough Syrup", 
-    image: imgImage136, 
+  {
+    id: 9,
+    name: "Cough Syrup",
+    image: imgImage136,
     category: "Respiratory",
     categoryColor: "#aa5b00",
     description: "Relief from cough and cold"
   },
-  { 
-    id: 10, 
-    name: "Antibiotic Capsules", 
-    image: imgImage133, 
+  {
+    id: 10,
+    name: "Antibiotic Capsules",
+    image: imgImage133,
     category: "Antibiotics",
     categoryColor: "#002e54",
     description: "Broad spectrum antibiotic"
   },
-  { 
-    id: 11, 
-    name: "Allergy Relief", 
-    image: imgImage131, 
+  {
+    id: 11,
+    name: "Allergy Relief",
+    image: imgImage131,
     category: "Anti-Allergenics",
     categoryColor: "#aa5b00",
     description: "Fast allergy relief tablets"
   },
-  { 
-    id: 12, 
-    name: "Deworming Tablet", 
-    image: imgImage132, 
+  {
+    id: 12,
+    name: "Deworming Tablet",
+    image: imgImage132,
     category: "Worm Eradication",
     categoryColor: "#002e54",
     description: "Effective worm treatment"
   },
-  { 
-    id: 13, 
-    name: "Therapeutic Ointment", 
-    image: imgImage143, 
+  {
+    id: 13,
+    name: "Therapeutic Ointment",
+    image: imgImage143,
     category: "Therapeutic Creams and Ointments",
     categoryColor: "#aa5b00",
     description: "Healing therapeutic ointment"
   },
-  { 
-    id: 14, 
-    name: "Nail Care Solution", 
-    image: imgImage146, 
+  {
+    id: 14,
+    name: "Nail Care Solution",
+    image: imgImage146,
     category: "Skin, Nail and Hair Care",
     categoryColor: "#002e54",
     description: "Complete nail care treatment"
   },
-  { 
-    id: 15, 
-    name: "Nappy Rash Cream", 
-    image: imgImage142, 
-    category: "Nappy Rash",
+  {
+    id: 15,
+    name: "Allermine 100ml",
+    image: imgAllermine,
+    video: videoAllermine,
+    category: "Anti-Allergenics",
     categoryColor: "#aa5b00",
-    description: "Gentle baby skin protection"
+    description: "Multi-symptom allergy relief"
   },
 ];
 
@@ -178,8 +181,8 @@ export default function Pharmaceuticals() {
 
   // Toggle category expansion
   const toggleCategory = (categoryName: string) => {
-    setExpandedCategories(prev => 
-      prev.includes(categoryName) 
+    setExpandedCategories(prev =>
+      prev.includes(categoryName)
         ? prev.filter(name => name !== categoryName)
         : [...prev, categoryName]
     );
@@ -200,7 +203,7 @@ export default function Pharmaceuticals() {
   const filteredProducts = allProducts.filter(product => {
     // Category filter
     let matchesCategory = selectedCategory === "All Products" || product.category === selectedCategory;
-    
+
     // If no direct match, check if selectedCategory is a parent category and product is in one of its subcategories
     if (!matchesCategory) {
       const parentCategory = categories.find(c => c.name === selectedCategory);
@@ -208,29 +211,29 @@ export default function Pharmaceuticals() {
         matchesCategory = parentCategory.subcategories.some(sub => sub.name === product.category);
       }
     }
-    
+
     // Search filter
-    const matchesSearch = searchQuery === "" || 
+    const matchesSearch = searchQuery === "" ||
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.category.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     return matchesCategory && matchesSearch;
   });
 
   // Get count for a category (including subcategories)
   const getCategoryCount = (categoryName: string) => {
     if (categoryName === "All Products") return allProducts.length;
-    
+
     // Check if category has subcategories
     const categoryDef = categories.find(c => c.name === categoryName);
     if (categoryDef && categoryDef.subcategories && categoryDef.subcategories.length > 0) {
-      return allProducts.filter(p => 
-        p.category === categoryName || 
+      return allProducts.filter(p =>
+        p.category === categoryName ||
         categoryDef.subcategories.some(sub => sub.name === p.category)
       ).length;
     }
-    
+
     return allProducts.filter(p => p.category === categoryName).length;
   };
 
@@ -246,10 +249,10 @@ export default function Pharmaceuticals() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-            
+
             {/* Navbar Overlay */}
             <Navbar />
-            
+
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col justify-end flex-1 px-5 sm:px-8 lg:px-16 pb-12 sm:pb-16 lg:pb-32">
               <div className="max-w-2xl">
@@ -349,40 +352,36 @@ export default function Pharmaceuticals() {
                       }}
                       className="w-full flex items-center justify-between text-left px-5 py-3 rounded-xl transition-all relative z-10 border border-transparent hover:border-black/5"
                     >
-                      <p className={`font-['Open_Sans',sans-serif] text-base lg:text-[18px] font-bold ${
-                        selectedCategory === category.name
+                      <p className={`font-['Open_Sans',sans-serif] text-base lg:text-[18px] font-bold ${selectedCategory === category.name
                           ? "text-white"
                           : "text-[#1a191f]"
-                      }`}>
+                        }`}>
                         {category.name}
                       </p>
-                      
+
                       {/* Show chevron for expandable categories, count for others */}
                       {category.subcategories && category.subcategories.length > 0 ? (
-                        <ChevronDown 
-                          className={`w-5 h-5 lg:w-6 lg:h-6 transition-transform ${
-                            selectedCategory === category.name ? "text-white" : "text-[#1a191f]"
-                          } ${
-                            expandedCategories.includes(category.name) ? 'rotate-180' : ''
-                          }`} 
+                        <ChevronDown
+                          className={`w-5 h-5 lg:w-6 lg:h-6 transition-transform ${selectedCategory === category.name ? "text-white" : "text-[#1a191f]"
+                            } ${expandedCategories.includes(category.name) ? 'rotate-180' : ''
+                            }`}
                         />
                       ) : (
-                        <div className={`rounded-lg px-2.5 py-1 min-w-[28px] flex items-center justify-center transition-colors ${
-                          selectedCategory === category.name ? "bg-white/20 text-white" : "bg-[#f7f7f7] text-[#505050]"
-                        }`}>
+                        <div className={`rounded-lg px-2.5 py-1 min-w-[28px] flex items-center justify-center transition-colors ${selectedCategory === category.name ? "bg-white/20 text-white" : "bg-[#f7f7f7] text-[#505050]"
+                          }`}>
                           <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-xs lg:text-[14px]">
                             {getCategoryCount(category.name)}
                           </p>
                         </div>
                       )}
                     </button>
-                    
+
                     {/* Selected category green background */}
                     {selectedCategory === category.name && (
                       <div className="absolute inset-0 bg-gradient-to-r from-[#297b29] to-[#009300] rounded-xl shadow-md z-0" />
                     )}
                   </div>
-                  
+
                   {/* Subcategories */}
                   {category.subcategories && category.subcategories.length > 0 && expandedCategories.includes(category.name) && (
                     <div className="flex flex-col gap-3 pl-4 lg:pl-[12px] mt-4 mb-2">
@@ -392,22 +391,20 @@ export default function Pharmaceuticals() {
                             onClick={() => setSelectedCategory(subcategory.name)}
                             className="w-full flex items-center justify-between text-left px-5 py-2.5 rounded-xl transition-all relative z-10"
                           >
-                            <p className={`font-['Open_Sans',sans-serif] text-sm lg:text-[18px] pr-2 ${
-                              selectedCategory === subcategory.name
+                            <p className={`font-['Open_Sans',sans-serif] text-sm lg:text-[18px] pr-2 ${selectedCategory === subcategory.name
                                 ? "font-bold text-white"
                                 : "font-normal text-[#1a191f]"
-                            }`}>
+                              }`}>
                               {subcategory.name}
                             </p>
-                            <div className={`rounded-lg px-2.5 py-1 min-w-[28px] flex items-center justify-center transition-colors ${
-                              selectedCategory === subcategory.name ? "bg-white/20 text-white" : "bg-[#f7f7f7] text-[#505050]"
-                            }`}>
+                            <div className={`rounded-lg px-2.5 py-1 min-w-[28px] flex items-center justify-center transition-colors ${selectedCategory === subcategory.name ? "bg-white/20 text-white" : "bg-[#f7f7f7] text-[#505050]"
+                              }`}>
                               <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-xs lg:text-[14px]">
                                 {getCategoryCount(subcategory.name)}
                               </p>
                             </div>
                           </button>
-                          
+
                           {/* Selected subcategory green background */}
                           {selectedCategory === subcategory.name && (
                             <div className="absolute inset-0 bg-gradient-to-r from-[#297b29] to-[#009300] rounded-xl shadow-sm z-0" />
@@ -438,13 +435,13 @@ export default function Pharmaceuticals() {
                   >
                     {/* Category Badge */}
                     <div className="absolute top-[14px] left-[11px] z-10">
-                      <div 
+                      <div
                         className="backdrop-blur-[2px] rounded-[999px] px-[12px] py-[6px]"
-                        style={{ 
+                        style={{
                           backgroundColor: product.categoryColor === "#002e54" ? "#ebf8ff" : "#fff5e6"
                         }}
                       >
-                        <p 
+                        <p
                           className="capitalize font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[8px] text-center whitespace-nowrap"
                           style={{ color: product.categoryColor }}
                         >
@@ -483,9 +480,9 @@ export default function Pharmaceuticals() {
                         {product.description}
                       </p>
                     </div>
-                    
+
                     {/* View in 3D button - positioned absolutely at bottom */}
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedProduct(product);
                         setIsModalOpen(true);

@@ -6,7 +6,7 @@ import { Footer } from "../components/Footer";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { ScrollAnimation } from "../components/ScrollAnimation";
 
-import imgHero from "../../assets/790c8d1c422c77d0ad2b32dcc8da991a2f89ead2.png";
+import heroVideo from "../../assets/videos/home hero.webm";
 import imgBusiness from "../../assets/2a5ccce750257a6cd412066b1650430e77866330.png";
 import imgLogo1 from "../../assets/26d019a88463060da92bcd7d8ee023520f98fb5b.png";
 import imgLogo2 from "../../assets/60d857ca5d1b67b75e9a142ace59cfed2d3a444c.png";
@@ -99,9 +99,12 @@ export function Home() {
       <section className="relative h-[85vh] sm:h-[90vh] lg:h-screen min-h-[600px] max-h-[1080px] overflow-hidden">
         <div className="pt-3 sm:pt-4 px-3 sm:px-4 lg:px-5 h-full">
           <div className="relative h-full rounded-[20px] lg:rounded-[30px] overflow-hidden flex flex-col">
-            <ImageWithFallback
-              src={imgHero}
-              alt="Astron Pharmaceuticals"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              src={heroVideo}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[20px] lg:rounded-[30px]" />
@@ -137,14 +140,6 @@ export function Home() {
               </div>
             </div>
 
-            {/* Arrow next */}
-            <div className="hidden xl:block absolute right-10 xl:right-14 top-1/2 -translate-y-1/2">
-              <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-full border-2 border-white/50 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer">
-                <svg width="30" height="22" viewBox="0 0 34 26" fill="none" className="xl:w-[34px] xl:h-[26px]">
-                  <path d="M1 13H33M21 1L33 13L21 25" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </div>
           </div>
         </div>
       </section>
