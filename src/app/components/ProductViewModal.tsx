@@ -56,7 +56,7 @@ export function ProductViewModal({ isOpen, onClose, product }: ProductViewModalP
           </div>
 
           {/* 3D Viewer Area */}
-          <div className="bg-[#f5f5f5] rounded-[22px] h-[250px] sm:h-[352px] flex items-center justify-center relative mb-[24px] sm:mb-[32px] overflow-hidden">
+          <div className="bg-white rounded-[22px] h-[300px] sm:h-[450px] flex items-center justify-center relative mb-[24px] sm:mb-[32px] overflow-hidden">
             {product.video ? (
               <video
                 src={product.video}
@@ -87,49 +87,8 @@ export function ProductViewModal({ isOpen, onClose, product }: ProductViewModalP
                 </div>
               </div>
             )}
-
-            {/* 360 Rotation Icon */}
-            <div className="absolute bottom-[20px] left-[20px]">
-              <div className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center shadow-md">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                  <g>
-                    <path d={svgPaths360.p140fad2 || "M15 8.33C17.41 7.61 19 6.39 19 5C19 2.79 14.97 1 10 1C5.03 1 1 2.79 1 5C1 7.06 4.5 8.75 9 8.98"} stroke="#005400" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                    <path d={svgPaths360.p1f8ba000 || "M10.25 9L7.5 6.25V11.75L10.25 9Z"} fill="#005400" stroke="#005400" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </g>
-                </svg>
-              </div>
-            </div>
-
-            {/* Fullscreen Icon */}
-            <div className="absolute bottom-[20px] right-[20px]">
-              <button className="w-[40px] h-[40px] bg-white rounded-lg flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors">
-                <Maximize2 className="w-5 h-5 text-gray-600" />
-              </button>
-            </div>
           </div>
 
-          {/* Thumbnail Strip */}
-          <div className="flex flex-wrap gap-2 sm:gap-[14px] justify-center mb-8 sm:mb-[40px]">
-            {[1, 2, 3, 4, 5].map((index) => (
-              <div
-                key={index}
-                className={`w-[50px] h-[45px] sm:w-[75px] sm:h-[65px] rounded-[12px] flex items-center justify-center cursor-pointer transition-all ${
-                  index === 1
-                    ? "bg-[#e8e8e8] ring-2 ring-[#005400]"
-                    : "bg-[#f5f5f5] hover:bg-[#ececec]"
-                }`}
-              >
-                {index === 1 && (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <g>
-                      <path d={svgPaths360.p140fad2} stroke="#005400" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                      <path d={svgPaths360.p1f8ba000} fill="#005400" stroke="#005400" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                    </g>
-                  </svg>
-                )}
-              </div>
-            ))}
-          </div>
 
           {/* CTA Section */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-0">

@@ -49,6 +49,15 @@ const categories = [
 // Sample products using the imported images with proper categories
 const allProducts = [
   {
+    id: 15,
+    name: "Allermine 100ml",
+    image: imgAllermine,
+    video: videoAllermine,
+    category: "Anti-Allergenics",
+    categoryColor: "#aa5b00",
+    description: "Multi-symptom allergy relief"
+  },
+  {
     id: 1,
     name: "Paracetamol",
     image: imgImage133,
@@ -159,15 +168,6 @@ const allProducts = [
     category: "Skin, Nail and Hair Care",
     categoryColor: "#002e54",
     description: "Complete nail care treatment"
-  },
-  {
-    id: 15,
-    name: "Allermine 100ml",
-    image: imgAllermine,
-    video: videoAllermine,
-    category: "Anti-Allergenics",
-    categoryColor: "#aa5b00",
-    description: "Multi-symptom allergy relief"
   },
 ];
 
