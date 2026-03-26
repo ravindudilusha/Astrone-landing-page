@@ -16,6 +16,7 @@ import imgImage90 from "../../assets/e4feb6dfab60a1505bc70d96c2ae70fe42adf40b.pn
 import imgImage88 from "../../assets/288a44e804d391cb7bb01f196bdd66b69f3be1f8.png";
 import imgRectangle45 from "../../assets/808ff71e4fd05987376e2bcc51359dd972bd64d7.png";
 import imgImage95 from "../../assets/7396514aa12dfb1d5ae5227dfa13a2906ee98caa.png";
+import imgAboutUs from "../../assets/About us.webp";
 import imgRectangle3851 from "../../assets/165bfb26e59a80ed1bba14a44074fd119d6e5572.png";
 import imgRectangle3852 from "../../assets/95d061ed72c5557d5765d453ac028b2ea928fbaa.png";
 import imgLeader from "../../assets/8857271392119918fa2735dd4fc18af697916f2a.png";
@@ -272,7 +273,7 @@ export function AboutUs() {
           </p>
           <div className="rounded-[20px] lg:rounded-[30px] overflow-hidden h-[300px] sm:h-[400px] lg:h-[520px]">
             <img
-              src={imgRectangle45}
+              src={imgAboutUs}
               alt="Astron pharmaceutical operations"
               className="w-full h-full object-cover"
             />

@@ -104,14 +104,14 @@ export function Navbar({ variant = "hero", smallLogo = false }: NavbarProps) {
 
                       {/* Our Brands Dropdown - Custom Design */}
                       {link.hasDropdown && link.label === "Our Brands" && openDropdown === link.label && (
-                        <div className="absolute top-full left-0 mt-2 z-50">
+                        <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                           <BrandsDropdown />
                         </div>
                       )}
 
                       {/* Operations Dropdown - Custom Design */}
                       {link.hasDropdown && link.label === "Operations" && openDropdown === link.label && (
-                        <div className="absolute top-full left-0 mt-2 z-50">
+                        <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                           <OperationsDropdown />
                         </div>
                       )}
@@ -184,14 +184,14 @@ export function Navbar({ variant = "hero", smallLogo = false }: NavbarProps) {
 
                       {/* Our Brands Dropdown - Custom Design */}
                       {link.hasDropdown && link.label === "Our Brands" && openDropdown === link.label && (
-                        <div className="absolute top-full left-0 mt-2 z-50">
+                        <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                           <BrandsDropdown />
                         </div>
                       )}
 
                       {/* Operations Dropdown - Custom Design */}
                       {link.hasDropdown && link.label === "Operations" && openDropdown === link.label && (
-                        <div className="absolute top-full left-0 mt-2 z-50">
+                        <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                           <OperationsDropdown />
                         </div>
                       )}
@@ -262,14 +262,14 @@ export function Navbar({ variant = "hero", smallLogo = false }: NavbarProps) {
 
                         {/* Our Brands Dropdown - Custom Design */}
                         {link.hasDropdown && link.label === "Our Brands" && openDropdown === link.label && (
-                          <div className="absolute top-full left-0 mt-2 z-50">
+                          <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                             <BrandsDropdown />
                           </div>
                         )}
 
                         {/* Operations Dropdown - Custom Design */}
                         {link.hasDropdown && link.label === "Operations" && openDropdown === link.label && (
-                          <div className="absolute top-full left-0 mt-2 z-50">
+                          <div className="absolute top-full left-0 mt-2 z-50 dropdown-bridge">
                             <OperationsDropdown />
                           </div>
                         )}
